@@ -79,3 +79,21 @@
 
 ## 🔧 Installation & Setup
 
+Clone the repo
+git clone https://github.com/yourusername/IntelliHire.git
+
+Navigate to the project directory
+cd IntelliHire
+
+(Optional) Create a virtual environment
+python -m venv venv
+source venv/bin/activate # Windows: venv\Scripts\activate
+
+Install dependencies
+pip install -r requirements.txt
+
+Run the application
+python app.py
+
+---
+
