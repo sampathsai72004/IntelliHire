@@ -62,6 +62,11 @@
 
 ---
 
+## 🎥 Demo Video
+
+[Watch the IntelliHire Demo Video](https://drive.google.com/file/d/1Ql4Lp2sa2ODU_URIRoUUTqa7us_xcbQI/view?usp=sharing)
+
+
 ## 📈 Future Enhancements
 
 - Integration of semantic search using transformer-based models like BERT or GPT
