@@ -27,8 +27,6 @@
 - **Dynamic Compatibility Scoring:** Quantifies how well a candidate's resume aligns with a chosen role.
 - **Skill Gap Detection:** Pinpoints missing skills and qualifications critical for the role.
 - **Personalized Upskilling Suggestions:** Recommends certification courses or learning paths based on detected gaps.
-- **Bulk Resume Processing:** Enables recruiters to upload and evaluate large volumes of resumes efficiently.
-- **Comprehensive Analytics:** Provides detailed insights and visualizations for smarter decision-making.
 - **User-friendly Web Interface:** Seamless experience for both applicants and hiring managers.
 
 ---
@@ -38,9 +36,9 @@
 - **Programming Language:** Python  
 - **Core Libraries:** `os`, `time`, `secrets`, `re`  
 - **NLP & AI:** SpaCy, NLTK, scikit-learn, or transformer-based models  
-- **Backend Framework:** Flask / Django (choose accordingly)  
+- **Backend Framework:** Flask
 - **Frontend:** HTML5, CSS3, Bootstrap, JavaScript  
-- **Database:** SQLite / PostgreSQL (customizable)  
+- **Database:** Firebase
 - **Other Tools:** PDF & DOCX resume parsing libraries, REST APIs
 
 ---
@@ -52,8 +50,6 @@
 3. **NLP Parsing:** The system extracts skills, experiences, and qualifications from resumes using NLP.
 4. **Matching & Scoring:** Compares extracted skills against role requirements using keyword matching and semantic analysis.
 5. **Skill Gap Analysis:** Identifies missing skills and suggests personalized learning resources.
-6. **Recruiter Dashboard:** Displays ranked candidates, key insights, and facilitates easy shortlisting.
-
 ---
 
 ## 🎓 Benefits & Impact
@@ -74,6 +70,7 @@
 - Authentication system with personalized profiles and history
 - API endpoints for third-party HRMS integration
 - Advanced visualization dashboards for recruitment analytics
+- Comprehensive Analytics: Provides detailed insights and visualizations for smarter decision-making.
 
 ---
 
