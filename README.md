@@ -1,6 +1,6 @@
 # IntelliHire - Automated AI Resume Screening Platform
 
-![IntelliHire Logo](assets/logo.png)  
+
 *Empowering smarter hiring decisions with cutting-edge AI*
 
 ---
