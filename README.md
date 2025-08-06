@@ -80,7 +80,7 @@
 ## 🔧 Installation & Setup
 
 Clone the repo
-git clone https://github.com/yourusername/IntelliHire.git
+git clone [https://github.com/yourusername/IntelliHire.git](https://github.com/sampathsai72004/IntelliHire.git)
 
 Navigate to the project directory
 cd IntelliHire
