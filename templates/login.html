@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with Firebase Authentication</title>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+
+    <style>
+     body {
+            font-family: 'Arial', sans-serif;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 600px;
+            background-color: transparent;
+            padding: 30px;
+            scroll-padding-top: 30px;
+            position:left;
+            align-content: left;
+    
+            border-radius: 37px;
+           
+            margin: auto; 
+        }
+
+
+        h2 {
+            margin-bottom: 20px;
+            color: #000000; 
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            text-align: left;
+            color: #000000; 
+        }
+       
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #444242;
+}
+
+input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            background-color: #444242; 
+        }
+        button {
+            background-color: #6491c1; 
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #a1bbd7; 
+        }
+        .options {
+            margin-top: 20px;
+        }
+        .options a {
+            color: #94cfff; 
+            text-decoration: none;
+        }
+        .options a:hover {
+            text-decoration: underline;
+        }
+        .signup-link {
+            margin-top: 20px;
+        }
+        .signup-link p {
+            color: #ae6767; 
+        }
+        .password-container {
+            position: relative;
+        }
+        .password-container input {
+            padding-right: 40px; 
+        }
+        .toggle-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 18px;
+            color: #1e2429; 
+        }
+        .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    
+    background-color: white;
+    padding: 2rem 9%;
+}
+
+.header.sticky {
+    background-color: #FFF;
+    box-shadow: var(--boxShadow);
+}
+
+.header .logo {
+    color: var(--mainColor);
+    font-size: 2.3rem;
+}
+
+.header .logo svg {
+    padding-left: .5rem;
+}
+
+.header .navbar a {
+    margin: 0 1rem;
+    font-size: 1.7rem;
+    color: var(--mainColor);
+}
+
+.header .navbar a:hover {
+    color: var(--mainColorHover);
+}
+
+.header .btn {
+    margin-top: 0;
+}
+
+.header .nav-toggler {
+    width: 44px;
+    height: 34px;
+    margin-right: 15px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.header .nav-toggler.active {
+    z-index: 1;
+}
+
+.header .nav-toggler span {
+    height: 2px;
+    width: 30px;
+    display: block;
+    background-color: var(--mainColor);
+    position: relative;
+}
+
+.header .nav-toggler.active span {
+    background-color: transparent;
+}
+
+.header .nav-toggler span::before,
+.header .nav-toggler span::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(#0A84FF);
+}
+
+.header .nav-toggler:hover span,
+.header .nav-toggler:hover span::before,
+.header .nav-toggler:hover span::after {
+    background-color: var(--mainColorHover);
+}
+
+.header .nav-toggler.active:hover span {
+    background-color: #0A84FF;
+}
+
+.header .nav-toggler span::before {
+    transform: translateY(-8px);
+    -webkit-transform: translateY(-8px);
+    -moz-transform: translateY(-8px);
+    -ms-transform: translateY(-8px);
+    -o-transform: translateY(-8px);
+}
+
+.header .nav-toggler.active span::before {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+
+.header .nav-toggler span::after {
+    transform: translateY(8px);
+    -webkit-transform: translateY(8px);
+    -moz-transform: translateY(8px);
+    -ms-transform: translateY(8px);
+    -o-transform: translateY(8px);
+}
+
+.header .nav-toggler.active span::after {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+}
+.credit{
+align-items: end;
+}
+  .footer-bottom {
+    margin-top: 40px;
+
+    border-top: 1px solid transparent;
+    padding-top: 15px;
+    font-size: 0.9rem;
+  }
+
+  footer {
+    background-color: transparent; 
+    color: #fff; 
+    padding: 40px 0;
+    align-items: end;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-row {
+      flex-direction: column;
+    }
+    
+    .footer-col {
+      flex-basis: 100%;
+      text-align: center;
+    }
+  
+    .footer-col ul {
+      text-align: center;
+    }
+  
+    .social-links {
+      justify-content: center;
+    }
+  }
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+    </style>
+</head>
+
+<body>
+    <link rel="stylesheet" href="static/css/styles.css">
+
+
+    <header class="header">
+    <link rel="stylesheet" href="static/styles.css">
+
+    <button type="button" class="nav-toggler" name="togglerButton">
+       
+    </button>
+
+    
+    
+    
+    <a href="{{ url_for('index') }}" class="logo" translate="no" style="font-size: 30px; font-weight: bolder;">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" style="height: 30px; vertical-align: middle; margin-right: 8px;">
+        IntelliHire<i></i>
+      </a>
+
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('about') }}">About US</a>
+        <a href="{{ url_for('feedback') }}">Feedback</a>
+        
+    </nav>
+
+
+   
+</header>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <center>
+
+
+        <div class="btn">
+            <div class="login-container">
+  
+      
+        </div>
+
+
+
+    <center>
+        <h2>Login Page</h2>
+        <form id="loginForm">
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" placeholder="Email" required />
+            
+            <label for="password">Password:</label>
+            <div class="password-container">
+                <input type="password" id="password" placeholder="Password" required />
+                <span class="toggle-icon" id="toggle-password">👁</span>
+            </div>
+            
+            <button type="submit">Login</button>
+            <div class="options">
+                <a href="{{ url_for('forgotpw') }}">Forgot Password?</a>
+            </div>
+            <div class="signup-link">
+                <p>Don't have an account? <a href="{{ url_for('signup') }}">Sign Up</a></p>
+            </div>
+        </form>
+        <div id="message"></div>
+    </center>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCTBoHu5CF9YlHfuQ0xeAXqR602w6OM7DY",
+            authDomain: "cacsa-91406.firebaseapp.com",
+            databaseURL: "https://cacsa-91406-default-rtdb.firebaseio.com",
+            projectId: "cacsa-91406",
+            storageBucket: "cacsa-91406.appspot.com",
+            messagingSenderId: "224478426118",
+            appId: "1:224478426118:web:b2b8173f5057bd3350ff87",
+            measurementId: "G-B9Y154LJMF"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    console.log("Login successful:", userCredential);
+                    window.location.href = "{{ url_for('index2') }}"; 
+                })
+                .catch((error) => {
+                    document.getElementById("message").textContent = "Error: " + error.message;
+                    console.error("Error:", error);
+                });
+        });
+
+        document.getElementById("toggle-password").addEventListener("click", function () {
+            const passwordField = document.getElementById("password");
+            const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
+            passwordField.setAttribute("type", type);
+            this.textContent = type === "password" ? "👁" : "👁‍🗨";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+   
+</head>
+<body>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <header class="header">
+            <script src="static/script.js"></script>
+        <link rel="stylesheet" href="static/styles.css">
+
+        <button type="button" class="nav-toggler" name="togglerButton">
+            <span></span>
+        </button>
+
+        <a href="{{ url_for('index') }}" class="logo" translate="no" style="font-size: 30px; font-weight: bolder;">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" style="height: 30px; vertical-align: middle; margin-right: 8px;">
+            IntelliHire<i></i>
+          </a>
+          
+
+        <nav class="navbar">
+            <a href="{{ url_for('index') }}">Home</a>  
+            <a href="#">About US</a>
+            <a href="{{ url_for('feedback') }}">Feedback</a>
+            
+        </nav>
+
+        <a href="{{ url_for('login') }}" class="btn">Get Started</a>
+    
+    </header>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+
+ <section class="about" id="about">
+    <h1 class="heading">about us <span>why choose us</span></h1>
+
+    <div class="row">
+        <div class="imgBx">
+            <img src="static/img/aboutimg.jpg" alt="about us">
+        </div>
+        <div class="content">
+            <h3 class="title">Empowering Your Career Journey</h3>
+            <p>We envision a world where every individual has the tools and opportunities to reach their full potential. By leveraging advanced AI and innovative learning solutions, we strive to create a future where career growth is personalized, accessible, and achievable for everyone.</p>
+            <br>
+            <p>Innovation: "We are committed to continually improving our technology and services to stay ahead in the ever-evolving job market."<br>
+                Integrity: "We value transparency and honesty in our interactions with users, partners, and stakeholders."<br>
+                Empowerment: "We believe in empowering individuals by providing them with the resources and support needed to succeed."<br>
+                Collaboration: "We foster a collaborative environment where ideas and feedback drive our growth and success."</p>
+            <div class="iconsContainer">
+                <div class="icons">
+                    <img src="static/img/innovation.png" alt="about Icon 1">
+                    <h3>Innovation</h3>
+                </div>
+                <div class="icons">
+                    <img src="static/img/integrity.png" alt="about Icon 2">
+                    <h3>Integrity</h3>
+                </div>
+                <div class="icons">
+                    <img src="static/img/emp.png" alt="about Icon 3">
+                    <h3>Empowerment</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 
+
+    <footer>
+
+    
+        <div class="credit">Designed By <span>IntelliHire Group</span> - All Rights Reserved &copy;</div>
+</footer>
+   
+</body>
+</html>

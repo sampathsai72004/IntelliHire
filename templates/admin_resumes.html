@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Uploaded Resumes</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h2 { text-align: center; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin: 10px 0; }
+        a { text-decoration: none; color: #007bff; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h2>Uploaded Resumes</h2>
+    <ul>
+        {% for resume in resumes %}
+        <li><a href="{{ url_for('download_resume', filename=resume) }}" target="_blank">{{ resume }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

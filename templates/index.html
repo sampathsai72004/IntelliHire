@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Competency and Candidate Score Analyzer">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/home-img-2.png') }}" type="image/x-icon">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/swiper-bundle.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+
+    
+    <title>IntelliHire</title>
+</head>
+
+<body>
+
+   
+
+    <header class="header">
+        <script src="script.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+        <button type="button" class="nav-toggler" name="togglerButton">
+            <span></span>
+        </button>
+
+        <a href="{{ url_for('index') }}" class="logo" translate="no" style="font-size: 30px; font-weight: bolder;">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" style="height: 30px; vertical-align: middle; margin-right: 8px;">
+            IntelliHire<i></i>
+          </a>
+          
+          
+        <nav class="navbar">
+            <a href="#">Home</a> 
+            <a href="{{ url_for('about') }}">About Us</a>
+            <a href="{{ url_for('feedback') }}">Feedback</a>
+            
+        </nav>
+
+        <a href="{{ url_for('login') }}" class="btn">Get Started</a>
+    </header>
+
+
+    <section  
+     class="home" id="home">
+        <div class="row">
+            <div class="content" >
+                <h3 style="font-size: 60px;">Unlock Your Potential with Personalized Job Matches and Skill Development</h3>
+                <a href="" class="btn">AI-powered insights, tailored job recommendations, and skill growth pathways—all in one place.</a>
+            </div>
+            <div class="imgBx">
+                <img src="static/img/backimg.png" class="mainHomeImg" alt="coffee 1">
+            </div>
+            <div class="imgSlider">
+                <img src="static/img/slide3.jpg" alt="coffee 1">
+                <img src="static/img/slide2.jpg" alt="coffee 2">
+                <img src="static/img/slide1.png" alt="coffee 3">
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h1 class="heading">about us <span>why choose us</span></h1>
+
+        <div class="row">
+            <div class="imgBx">
+                <img src="static/img/aboutimg.jpg" alt="about us">
+            </div>
+            <div class="content">
+                <h3 class="title">Empowering Your Career Journey</h3>
+                <p>We envision a world where every individual has the tools and opportunities to reach their full potential. By leveraging advanced AI and innovative learning solutions, we strive to create a future where career growth is personalized, accessible, and achievable for everyone.</p>
+                <br>
+                <p>Innovation: "We are committed to continually improving our technology and services to stay ahead in the ever-evolving job market."<br>
+                    Integrity: "We value transparency and honesty in our interactions with users, partners, and stakeholders."<br>
+                    Empowerment: "We believe in empowering individuals by providing them with the resources and support needed to succeed."<br>
+                    Collaboration: "We foster a collaborative environment where ideas and feedback drive our growth and success."</p>
+                <div class="iconsContainer">
+                    <div class="icons">
+                        <img src="static/img/innovation.png" alt="about Icon 1">
+                        <h3>Innovation</h3>
+                    </div>
+                    <div class="icons">
+                        <img src="static/img/integrity.png" alt="about Icon 2">
+                        <h3>Integrity</h3>
+                    </div>
+                    <div class="icons">
+                        <img src="static/img/emp.png" alt="about Icon 3">
+                        <h3>Empowerment</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu" id="menu">
+        <h1 class="heading">Our Values <span>IntelliHire</span></h1>
+        <div class="boxContainer">
+            <a href="javascript:void(0)" id="disabledLink" class="box">
+                
+                <div class="content">
+                    <h3>Collaboration</h3>
+                    <p>We believe in the power of collaboration. By working closely with our users and partners, we gather valuable insights and feedback to enhance our services.</p>
+                    
+                </div>
+            </a>
+            <a href="javascript:void(0)" id="disabledLink" class="box">
+               
+                <div class="content">
+                    <h3>Excellence</h3>
+                    <p>We are committed to delivering exceptional quality in every aspect of our service. Our pursuit of excellence drives us to exceed expectations and achieve outstanding results.</p>
+                    
+                </div>
+            </a>
+            <a href="javascript:void(0)" id="disabledLink" class="box">
+               
+                <div class="content">
+                    <h3>Responsiveness</h3>
+                    <p>We respond quickly and effectively to the needs and feedback of our users. Our agile approach ensures we adapt to changing requirements and continuously improve.</p>
+                   
+                </div>
+            </a>
+            <a href="javascript:void(0)" id="disabledLink" class="box">
+               
+                <div class="content">
+                    <h3>Sustainability</h3>
+                    <p>We are dedicated to sustainable practices that benefit our community and the environment. We seek to minimize our impact and contribute positively to society.</p>
+                    
+                </div>
+            </a>
+            <a href="javascript:void(0)" id="disabledLink" class="box">
+                
+                <div class="content">
+                    <h3>Accountability</h3>
+                    <p>We take responsibility for our actions and decisions. Accountability is key to building trust and ensuring that we deliver on our promises to users and stakeholders.</p>
+                   
+                </div>
+            </a>
+            <a href="javascript:void(0)" id="disabledLink" class="box">
+               
+                <div class="content">
+                    <h3>User-Centricity</h3>
+                    <p>Our users are central to everything we do. We focus on creating an intuitive and personalized experience that meets their unique needs and aspirations.</p>
+                    
+                </div>
+            </a>
+        </div>
+    </section>
+
+<center>
+    <section class="feedback" id="feedback"></section>
+    <h1 class="heading">Your feedback<span>IntelliHire</span></h1>
+    <div class="boxContainer">
+        <a href="javascript:void(0)" id="disabledLink" class="box">
+            <div class="feedback-container">
+                <h1>We Value Your Feedback</h1>
+                <p>Please take a moment to give us your feedback. Your opinions help us improve!</p>
+            
+                <form class="feedback-form">
+                  <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Your Name" required>
+                  </div>
+            
+                  <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                  </div>
+            
+                  <div class="form-group">
+                    <label for="feedback">Feedback:</label>
+                    <textarea id="feedback" rows="5" placeholder="Your feedback here..." required></textarea>
+                  </div>
+            
+                  <div class="form-group rating-group">
+                    <label>Rate us:</label>
+                    <div class="rating-stars">
+                      <span class="star" data-value="1">&#9733;</span>
+                      <span class="star" data-value="2">&#9733;</span>
+                      <span class="star" data-value="3">&#9733;</span>
+                      <span class="star" data-value="4">&#9733;</span>
+                      <span class="star" data-value="5">&#9733;</span>
+                    </div>
+                  </div>
+            
+                  <button type="submit" class="submit-btn">Submit Feedback</button>
+                </form>
+              </div>
+
+            </div>
+            </section
+    
+</center>
+  
+
+    <section class="features-section">
+        <h2>3 Key Features that can be highlighted for your "Comprehensive Employment Platform"</h2>
+        <div class="cards-container">
+          <div class="card">
+            <div class="card-icon">
+              <img src="static/img/ai2.png" alt="AI">
+            </div>
+            <h3>AI-Powered Personalized Job & Training Recommendations
+            </h3>
+            <p>How it Works: An intelligent AI-based system analyzes user profiles, including skills, job preferences, and past experiences, to recommend the most suitable job roles. It also identifies gaps between the user’s skills and the job's requirements, suggesting tailored online courses and training programs to help bridge these gaps.<br><br>
+                Benefit: Ensures that job seekers not only find job opportunities but also have a pathway to improve their qualifications, making them more competitive in the job market.</p>
+          </div>
+    
+          <div class="card">
+            <div class="card-icon">
+              <img src="static/img/learn.png" alt="learn">
+            </div>
+            <h3>Skill Gap Analysis and Adaptive Learning Pathways</h3>
+            <p>How it Works: A competency diagnostic test assesses users' current skills and highlights areas for improvement based on their desired job roles. The platform then provides personalized learning pathways with a variety of content, including micro-courses, webinars, and hands-on projects, that adapt to the user's progress and feedback.<br><br>
+                Benefit: By continuously tracking and improving skills through personalized learning, the platform helps users become job-ready more efficiently and effectively.</p>
+          </div>
+    
+          <div class="card">
+            <div class="card-icon">
+              <img src="static/img/coach.png" alt="coach">
+            </div>
+            <h3> AI Career Coach</h3>
+            <p>Concept: Incorporate an AI-driven career coach that interacts with users via text or voice. This virtual coach provides personalized career advice, recommends networking opportunities, and even helps with interview preparation based on the user’s profile and goals.
+                Benefit: Offers a more personalized support system, making the platform not just a tool for job and training matching but also a comprehensive career development assistant.<br><br>
+                These features could provide unique selling points for your platform, emphasizing innovation in job matching and career education while enhancing user engagement and satisfaction.</p>
+          </div>
+        </div>
+      </section>
+     
+  <footer>
+    <div class="footer-container">
+      <div class="footer-row">
+        <div class="footer-col">
+          <h2>Contact Us</h2>
+          <ul>
+            <h3>Email: intellihire@gmail.com</h3>
+            <h3>Phone: +1 234 567 890</h3>
+            <h3>Address: Telengana,Hyderabad,India</h3>
+          </ul>
+        </div>
+        <div class="footer-col">
+            <center>
+                <h2>Follow Us</h2>
+                <div class="social-links">
+                  
+                  <a href="#"><img src="static/img/facebook.png" width="50" height="50" alt="Facebook"></a>
+                  <a href="#"><img src="static/img/twitter.png"width="50" height="50" alt="Twitter"></a>
+                  <a href="#"><img src="static/img/instagram.png" width="50" height="50" alt="Instagram"></a>
+                  <a href="#"><img src="static/img/in.png"width="50" height="50" alt="LinkedIn"></a>
+              </div>
+            </center>
+          
+        
+          
+        </div>
+      </div>
+     
+    </div>
+  </footer>
+
+  
+
+    
+
+    <div class="credit">Designed By <span>IntelliHire Group</span> - All Rights Reserved &copy;</div>
+
+
+    <div id='toTop'>
+        <i class="fas fa-angle-double-up fa-lg totop-icon" title="Go To Top"></i>
+    </div>
+
+    
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/all.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        window.embeddedChatbotConfig = {
+        chatbotId: "r9xvoo7dK8Nj_tASBmbW-",
+        domain: "www.chatbase.co"
+        }
+        </script>
+        <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="r9xvoo7dK8Nj_tASBmbW-"
+        domain="www.chatbase.co"
+        defer>
+        </script>
+</body>
+
+</html>
